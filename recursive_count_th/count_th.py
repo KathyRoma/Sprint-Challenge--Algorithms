@@ -5,6 +5,12 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
+    # Base (if the word is too short)
+    if len(word) <= 1:
+        return 0
+    # When found one, count and recurse
+    if word[:2] == 'th':
+        return 1 + count_th(word[2:])
     
-    pass
+    # Move right
+    return count_th(word[1:])
